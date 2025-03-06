@@ -1,0 +1,342 @@
+:root{
+    --white-background:white;
+    --white: white;
+    --light-purple: rgb(115, 95, 169);
+    --purple-text: rgb(115, 95, 169);
+    --purple-white: rgb(219, 213, 234);
+    --dark-purple:rgb(68, 55, 103);
+    --dark-purple-text:rgb(68, 55, 103);
+    --standout:rgb(220, 164, 52); 
+    --blck: rgb(52, 52, 52);
+    --shadow:rgb(0, 0, 0, 0.2); 
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    all:unset;
+    background-color: var(--white-background);
+    display: grid;
+    min-height: 100vh;
+    min-height: 100dvh;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header header header header"
+    "main main main sidebar"
+    "footer footer footer footer";
+    margin: 0%;
+    font-family: 'Georgia';
+}
+
+header{
+    background-color: var(--dark-purple);
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(5,1fr);
+    font-size: 1rem;
+    box-shadow: 0px 2px  2px rgb(69, 69, 69);
+    grid-area: header;
+    text-align: left;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 99;
+}
+
+header p{
+    grid-column: span 4;
+    margin-left: 10px;
+}
+
+header p a{
+    text-decoration: none;
+}
+
+menu{
+    display: flex;
+    flex-grow: 2;
+    padding: 0;
+    margin-right: 20px;
+    grid-column: 5;
+}
+menu li{
+    list-style-type: none;
+    width:100%;
+    height: 100%;
+    text-decoration: none;
+    margin: 0 5px 0 5px;
+    align-content: center;
+}
+
+menu li a:link{
+    color: var(--dark-purple);
+    background-color: var(--white);
+    text-decoration: none;
+    padding:10px;
+    margin-left: 5px;
+}
+
+menu li a:hover{
+    color: var(--dark-purple-text);
+    background-color: var(--standout);
+}
+
+.main-menu.icon{
+    display: none;
+    text-align: right;
+    margin-right: 1rem;
+    line-height: 75px;
+    color: var(--purple-white);
+    grid-column: 5;
+}
+
+.logo{
+    margin: 0.8rem;
+    height: 2.2rem;
+    display: block;
+    pointer-events: none;
+    color: var(--white);
+}
+
+.top-nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.top-nav li{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.top-nav li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--purple-text);
+}
+
+h2 {
+    margin: 1rem;
+    font-size: 2rem;
+    color: var(--purple-text);
+}
+
+p{
+    margin:0.5rem;
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+.container{
+    position: relative;
+    width: 25rem;
+    border-radius: 50%;
+}
+
+main{
+    margin: 20px;
+    font-size: 1.5rem;
+    grid-area: main;
+}
+
+main p{
+    color: var(--blck);
+}
+
+main a:link{
+    text-decoration: none;
+
+}
+aside.sidebar{
+    grid-area: sidebar;
+    min-height: fit-content;
+    justify-self: center;
+    height:100vh;
+    height:100dvh;
+    text-align: center;
+    width: calc(100% - 30px);
+    padding-top: 100px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.card{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    align-content: center;
+    border-radius: 5px;
+    background-color: var(--purple-white);
+}
+
+aside h3{
+    color: var(--blck);
+    margin: auto;
+}
+aside .card p{
+    color: var(--blck);
+    margin: auto;
+    text-align: center;
+}
+
+.user{
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 10rem;
+    height: 10rem;
+    pointer-events: none;
+    user-select: none;
+    padding: 1rem;
+    align-items: center;
+}
+
+footer{
+    grid-area: footer;
+    background-color: var(--dark-purple);
+    padding: 15px 10px;
+    color: var(--white);
+    font-size: 15px;
+    margin: auto;
+    text-align: center;
+    width: max-content;
+}
+
+
+footer a:link{
+    text-decoration: none;
+}
+
+footer a{
+    color: var(--white);
+    position: absolute;
+    right: 10px;
+}
+footer br{
+    display: none;
+}
+
+.collapsed {
+    background-color:var(--light-purple);
+    color: var(--white);
+    cursor: pointer;
+    padding: 18px;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+  }
+  
+  .active{
+    background-color: var(--dark-purple);
+    border-radius: 0;
+  } 
+
+  .collapsed:hover {
+    background-color: var(--dark-purple);
+  }
+  
+  .collapsed:after {
+    content: '\002B';
+    color: var(--white);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: var(--purple-white);
+      font-size: 20px;
+      color: var(--blck);
+
+    }
+    
+    .content li a{
+        list-style-type: circle;
+  }
+
+@media screen and (max-width:992px){
+    body{
+        grid-template-areas:
+        "header header header header"
+        "main main main main"
+        "sidebar sidebar sidebar sidebar"
+        "footer footer footer footer";
+    }
+    .main-menu.icon{
+        display:block;
+    }
+
+    #nav-menu{
+        display:none;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    menu{
+        grid-row:2;
+        flex-direction:column;
+        grid-column: span 5;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin-right: 0px;
+        background-color: var(--purple-white);
+    }
+    
+    menu li a:link{
+        width: 100%;
+        height: min-content ;
+        margin: 0px;
+        display: block;
+        align-content: center;
+
+    }
+
+    menu li{
+        height: 100%;
+        margin: 0%;
+        align-content: center;
+        background-color: var(--white-background);
+    }
+    
+    aside.sidebar{
+        padding-top: 0px;
+        position: relative;
+    }
+    footer br{
+        display: block;
+    }
+
+    footer a{
+        position: relative;
+    }
+}
+ 
